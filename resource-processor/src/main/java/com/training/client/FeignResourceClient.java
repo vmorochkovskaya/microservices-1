@@ -1,11 +1,11 @@
 package com.training.client;
 
-import com.training.entity.Song;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name="resource")
+@FeignClient(name="resource", url = "localhost:8083")
 public interface FeignResourceClient {
-    @PostMapping("/resources")
-    void postResource(Song song);
+    @GetMapping("/resources/{id}")
+    byte[] getResource(@PathVariable("id") String id);
 }

@@ -29,6 +29,7 @@ public class SongController {
     @PostMapping
     public ResponseEntity<SongIdDto> postSong(@RequestBody @Valid Song song) {
         Song savedSong = songRepository.save(song);
+        System.out.println(savedSong.getId());
         return ResponseEntity.ok().body(new SongIdDto(savedSong.getId()));
     }
 
