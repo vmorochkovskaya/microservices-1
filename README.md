@@ -3,7 +3,7 @@
    ##### 2. ```docker compose up -d```
    ##### 3. create a topic:
 - ```docker exec -it kafka bash```
-- ```kafka-topics.sh --create --topic resource-event --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1```
+- ```kafka-topics --create --topic resource-event --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1```
  ##### 4. ```mvn spring-boot:run```
 ### 2. Start songs
    ```cd intro-tasl-1-song```
