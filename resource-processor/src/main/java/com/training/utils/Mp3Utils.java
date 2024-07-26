@@ -13,14 +13,14 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class Mp3Utils {
-    public static Song buildSongFromBytes(byte[] fileData, String resourceId) {
+    public static Song buildSongFromBytes(byte[] bytes, String resourceId) {
         BodyContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
         ParseContext pcontext = new ParseContext();
 
         //Mp3 parser
         Mp3Parser Mp3Parser = new Mp3Parser();
-        InputStream inputstream = new ByteArrayInputStream(fileData);
+        InputStream inputstream = new ByteArrayInputStream(bytes);
 
         try {
             Mp3Parser.parse(inputstream, handler, metadata, pcontext);

@@ -19,6 +19,6 @@ public class Song {
     private int rate;
     private Double duration;
     @NotNull(message = "resourceId cannot be Null")
-    private Integer resourceId;
+    private String resourceId;
 
 }

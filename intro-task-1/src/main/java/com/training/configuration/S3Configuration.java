@@ -21,7 +21,7 @@ public class S3Configuration {
 
         return S3Client.builder()
                 .region(Region.US_EAST_1)
-                .credentialsProvider(EnvironmentVariableCredentialsProvider.create())
+                //.credentialsProvider(EnvironmentVariableCredentialsProvider.create())
                 .overrideConfiguration(clientOverrideConfiguration)
                 .build();
     }

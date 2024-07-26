@@ -19,6 +19,7 @@
         <maven.compiler.target>10</maven.compiler.target>
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <aws.java.sdk.version>2.26.7</aws.java.sdk.version>
+        <confluent.version>7.5.1</confluent.version>
     </properties>
 
     <dependencyManagement>
@@ -122,6 +123,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+<!--            <version>3.1.2</version>-->
         </dependency>
     </dependencies>
     <build>
