@@ -53,6 +53,7 @@ public class ResourceController {
 
     @GetMapping("/{id}")
     public ResponseEntity<byte[]> getResource(@PathVariable String id) {
+        log.info("GET: " + id);
         Optional<FileDB> resource = resourceRepository.findById(id);
         return resource.map(res -> ResponseEntity.ok().body(res.getData()))
                 .orElseThrow(() -> new ResourceNotFoundException("The resource with the specified id does not exist"));
