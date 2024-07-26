@@ -17,7 +17,7 @@ public class KafkaConsumer {
     private final FeignResourceClient feignResourceClient;
 
     @KafkaListener(topics = "${kafka.topic}", groupId = "${kafka.consumer.group}")
-    public void listen(ConsumerRecord<String, String> record) {
+    public void listen(ConsumerRecord<String, String > record) {
         log.info("Received Message: key={}, value={}, partition={}, offset={}", record.key(), record.value(), record.partition(), record.offset());
         //1. Get Resource
         byte[] resourceBytes = feignResourceClient.getResource(record.value());

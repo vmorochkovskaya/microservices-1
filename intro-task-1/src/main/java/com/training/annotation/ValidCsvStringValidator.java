@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class ValidCsvStringValidator implements ConstraintValidator<ValidCsvString, String> {
 
-    private static final Pattern CSV_PATTERN = Pattern.compile("^([a-zA-Z0-9]+,)*[a-zA-Z0-9]+$");
+    private static final Pattern CSV_PATTERN = Pattern.compile("^([a-zA-Z0-9-]+,)*[a-zA-Z0-9-]+$");
 
     @Override
     public void initialize(ValidCsvString constraintAnnotation) {

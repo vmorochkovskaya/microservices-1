@@ -16,11 +16,11 @@ public class KafkaClient {
     public void sendMessage(FileDB outboundEvent) {
         try {
             final ProducerRecord<String, String> record =
-                    new ProducerRecord<>("resource-event", outboundEvent.getId(), outboundEvent.getId());
+                    new ProducerRecord<>("resource", outboundEvent.getId(), outboundEvent.getId());
             kafkaTemplate.send(record);
         } catch (Exception e) {
             String message = "Error sending message to topic " + "resource-event";
-            log.error(message);
+            log.error(e.getMessage());
             throw new RuntimeException(message, e);
         }
     }
